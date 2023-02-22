@@ -1,0 +1,22 @@
+<script>
+  var nAdd;
+  var t = function () {
+    var n = 99;
+    nAdd = function () {
+      n++;
+    }
+    var t2 = function () {
+      console.log(n)
+    }
+    return t2;
+  };
+
+  var a1 = t();//第一次给nAdd赋值
+  var a2 = t();//第二次给nAdd赋值
+
+  nAdd();//执行 nAdd 函数，我们执行的是其实是 fn2，改变的是a2里n的值
+  //a1里n的值不变，因为没有调用
+
+  console.log(a1())//99
+  console.log(a2())//100
+</script>
